@@ -1,0 +1,17 @@
+<div class="h-100 w-100 p-4 min-width">
+    <section class="h-100 w-100 align-middle text-center p-4">
+        Welcome to the chat
+        <form #formMessage = "ngForm" (ngSubmit)="submit(formMessage)" class="d-flex p-3">
+            <input type="text" class="form-control border-0 border-bottom" 
+                id="postText" placeholder="Write something..." name="postText"
+                required minlength="2" [maxlength]="postMaxLength" ngModel/>
+            <div class="d-flex flex-column">
+                <button type="submit" class="btn btn-primary btn-customized mt-4">Post</button>
+                <small>{{ formMessage.value?.postText?.length ?? 0 }} / {{ postMaxLength }}</small>
+            </div>
+        </form>
+    </section>
+    <section class="row gap-3 mx-4">
+        <app-post *ngFor="let post of chatHistory; let i = index" [post]="post" class="border" (onRemovePost)="removePost(i)"></app-post>
+    </section>
+</div>

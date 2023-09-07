@@ -1,0 +1,8 @@
+<section class="d-flex justify-content-between p-4">
+    <label class="max-width-80">{{ post.message }}</label>
+    <div class="d-flex align-items-center">
+        <small *ngIf="timeAsSeconds > 59">{{ post.postDate | date:'short' }}</small>
+        <small *ngIf="timeAsSeconds < 59">{{ timePassed }}s ago</small>
+        <mat-icon title="Remove" (click)="removePost()">delete</mat-icon>
+    </div>
+</section>

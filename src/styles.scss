@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+small {
+    font-size: 0.7rem !important;
+}
+
+mat-icon {
+    cursor: pointer;
+}
+
+.min-width {
+    min-width: 400px;
+}
+
+.max-width-80 {
+    max-width: 80%;
+    word-wrap: break-word;
+}
